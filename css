@@ -1,15 +1,80 @@
-.clearfix {
-  display: block;
-  zoom: 1;
+/*遮罩页*/
 
-  &:after {
-    content: " ";
-    display: block;
-    font-size: 0;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+.mask{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.58);
+  position:fixed;
+  top: 0;
+  display: none;
+
+  .close{
+    z-index: 69;width: 30px;position: fixed;top:30px;right: 0px;
+     }
+  .note{
+    z-index: 66;width: 100%;position: fixed;top:20px;
+    overflow-x: hidden;
   }
+}
+/*reset*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: "Microsoft YaHei";
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*=======
+useful moudle
+=======*/
+.float-left{
+    float:left;
+}
+.float-right{
+    float: right;
+}
+.clear-fix{overflow:hidden;_zoom:1;}
+ul,ul>li{
+    list-style: none;
+}
+a:hover,a:link,a:active,a:visited{
+    text-decoration: none;
+    color: black;
+    -moz-transition: all 1s ease 0s;
+    -webkit-transition:all 1s ease 0s;
+    transition:all 1s ease 0s;
+    -o-transition:all 1s ease 0s;
+}
 }
 
 /*多媒体查询*/
