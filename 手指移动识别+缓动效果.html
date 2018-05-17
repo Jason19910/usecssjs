@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <title>Title</title>
+</head>
+<body>
+<div id="content" style="width: 100vw;height: 100vh">
+    <div id="message" style="border:1px solid red;height: 100px;width: 100px;">
+        adasda
+    </div>
+    <div id="messge" style="border:1px solid red;height: 100px;width: 100px;">
+        adasda
+    </div>
+</div>
+
+<script src="js/jq_mini.js"></script>
+<script>
+
+    $("#content").on("touchstart", function(e) {
+        // 判断默认行为是否可以被禁用
+        if (e.cancelable) {
+            // 判断默认行为是否已经被禁用
+            if (!e.defaultPrevented) {
+                e.preventDefault();
+            }
+        }
+        startX = e.originalEvent.changedTouches[0].pageX,
+            startY = e.originalEvent.changedTouches[0].pageY;
+    });
+    $("body").on("touchend", function(e) {
+        // 判断默认行为是否可以被禁用
+        if (e.cancelable) {
+            // 判断默认行为是否已经被禁用
+            if (!e.defaultPrevented) {
+                e.preventDefault();
+            }
+        }
+        moveEndX = e.originalEvent.changedTouches[0].pageX,
+            moveEndY = e.originalEvent.changedTouches[0].pageY,
+            Y = moveEndY - startY;
+            if ( Y < 0 ) {
+            $('#message').animate({
+                marginLeft:'10px',
+                opacity:0.8,
+                fontSize:'24px'
+            },400,'linear');
+            console.log("slidedown")
+         }else if( Y > 0 ){
+                $('#message').animate({
+                    marginLeft:' 0',
+                    opacity:1,
+                    fontSize:'22px'
+                },400,'linear');
+            }
+
+    });
+</script>
+</body>
+</html>
