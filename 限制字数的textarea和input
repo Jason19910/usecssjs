@@ -1,0 +1,5 @@
+<textarea id="message" rows="3" maxlength="50" 
+onchange="this.value=this.value.substring(0, 50)" 
+onkeydown="this.value=this.value.substring(0, 50)" 
+onkeyup="this.value=this.value.substring(0, 50)">
+</textarea>
